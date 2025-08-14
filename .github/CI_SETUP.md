@@ -90,11 +90,15 @@ npm run ci:full
 
 ## 版本管理
 
-工作流会自动管理版本号：
-- **自动版本更新**: 每次发布时自动增加 patch 版本号 (例如: 1.0.0 → 1.0.1)
-- **Git 提交**: 版本变更会自动提交到仓库 (带有 `[skip ci]` 标记避免循环触发)
-- **标签创建**: 为每个发布版本创建 git 标签 (例如: v1.0.1)
-- **标签推送**: 自动推送标签到远程仓库
+项目使用语义化版本控制 (Semantic Versioning)。版本号格式为 `MAJOR.MINOR.PATCH`。
+
+### 自动版本管理
+
+GitHub Actions 会在每次推送到 main/master 分支时自动处理版本更新：
+
+1. **代码生成阶段**：生成器会检查现有的 `package.json` 文件并保持当前版本号
+2. **发布阶段**：GitHub Actions 自动执行 `npm version patch` 来递增版本号
+3. **提交阶段**：新版本号会被提交回仓库
 
 ### 手动版本管理
 
@@ -109,6 +113,15 @@ npm run version:minor
 # 增加 major 版本 (1.0.0 → 2.0.0)
 npm run version:major
 ```
+
+### 版本管理工作流程
+
+1. 开发者修改 OpenAPI 规范文件
+2. 推送到 main/master 分支触发 CI
+3. CI 生成新的 API 代码（保持现有版本号）
+4. CI 自动递增 patch 版本号
+5. CI 发布新版本到 npm
+6. CI 将版本变更提交回仓库
 
 ## 故障排除
 
