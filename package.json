@@ -1,5 +1,5 @@
 {
-  "name": "api-project-template",
+  "name": "@yaoyaoyu/api-project-auto-generator-test",
   "version": "1.0.0",
   "description": "API code generator project template",
   "main": "dist/index.js",
