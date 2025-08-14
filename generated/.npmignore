@@ -1,5 +1,6 @@
 # Source files (only include dist in npm package)
 src/
+node_modules/
 
 # Development files
 tsconfig.json

@@ -709,6 +709,7 @@ Thumbs.db
   private async generateNpmignore(): Promise<GeneratedFile> {
     const content = `# Source files (only include dist in npm package)
 src/
+node_modules/
 
 # Development files
 tsconfig.json
