@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Example API
+  title: Example API1
   description: A sample API to demonstrate the generator
   version: 1.0.0
 servers:
