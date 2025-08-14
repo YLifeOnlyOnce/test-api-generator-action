@@ -223,7 +223,7 @@ components:
           description: Total number of items
         totalPages:
           type: integer
-          description: Total number of pages11
+          description: Total number of pages111
 
     Error:
       type: object
