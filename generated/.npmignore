@@ -1,8 +1,11 @@
-# Dependencies
-node_modules/
-yarn.lock
+# Source files (only include dist in npm package)
+src/
 
-# Build artifacts that shouldn't be committed
+# Development files
+tsconfig.json
+tsup.config.ts
+
+# Build artifacts that shouldn't be published
 *.tsbuildinfo
 
 # Logs
@@ -26,3 +29,13 @@ Thumbs.db
 .cache/
 .npm/
 .eslintcache
+
+# Git files
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
