@@ -133,6 +133,16 @@ npm run version:major
    - 确保使用 chalk v4.x 而不是 v5.x（v5+ 仅支持 ESM）
    - 检查 package.json 中的依赖版本是否正确
 
+5. **HTML 转义错误**
+   - 如果生成的 TypeScript 代码中出现 `Record&lt;string, any&gt;` 等 HTML 转义字符
+   - 错误信息：`Unexpected "&"` 或 `Property or signature expected`
+   - 解决方案：在 `src/generator.ts` 中修改 Handlebars helper：
+     ```typescript
+     Handlebars.registerHelper("toTypeScript", (schema: Schema) => {
+       return new Handlebars.SafeString(schemaToTypeScript(schema));
+     });
+     ```
+
 ### 调试步骤
 
 1. 查看 GitHub Actions 日志
