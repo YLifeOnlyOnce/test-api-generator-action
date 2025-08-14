@@ -162,7 +162,7 @@ export interface {{capitalize method}}{{pathToTypeName path}}Request {
 
     // 注册Handlebars helpers
     Handlebars.registerHelper("toTypeScript", (schema: Schema) => {
-      return schemaToTypeScript(schema);
+      return new Handlebars.SafeString(schemaToTypeScript(schema));
     });
 
     Handlebars.registerHelper("pathToTypeName", pathToTypeName);
