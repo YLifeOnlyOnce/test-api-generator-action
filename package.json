@@ -1,6 +1,6 @@
 {
   "name": "@yaoyaoyu/api-project-auto-generator-test",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "API code generator project template",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
